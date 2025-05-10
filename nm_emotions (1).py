@@ -241,6 +241,14 @@ nltk
 wordcloud
 """)
 
-# Download to your computer
+import streamlit as st
+import pandas as pd
 
-files.download("requirements.txt")
+# Add the Streamlit file uploader widget
+uploaded_file = st.file_uploader("sentiment", type=["csv"])
+
+if uploaded_file is not None:
+    # Read the uploaded CSV file
+    df = pd.read_csv(uploaded_file) # Changed 'sentiment' to 'uploaded_file'
+    # You can display the dataframe in the app if needed
+    st.write(df.head())
