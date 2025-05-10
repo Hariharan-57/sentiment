@@ -242,5 +242,5 @@ wordcloud
 """)
 
 # Download to your computer
-from google.colab import files
+
 files.download("requirements.txt")
